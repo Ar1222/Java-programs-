@@ -5,8 +5,7 @@ public static void main(String arg[])
 {
 int i,num,sum=0,digit;
 Scanner sc=new Scanner(System.in);
-System.out.println("\t\tSum of digits");
-System.out.println("enter the number:");
+
 num=sc.nextInt();
 while(num>0)
 {
