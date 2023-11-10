@@ -1,0 +1,64 @@
+import java.util.*;
+class EvenNum implements Runnable
+{
+public int a;
+public EvenNum(int a)
+{
+this.a=a;
+}
+public void run()
+{
+System.out.println(" The Thread of "+a+"is Even and square of "+a+"is"+a*a);
+}
+}
+class OddNum implements Runnable
+{
+public int a;
+public OddNum(int a)
+{
+this.a=a;
+}
+public void run()
+{
+System.out.println(" The Thread of "+a+"is Odd and cube of "+a+"is"+a*a*a);
+}
+}
+ class RandomNum extends Thread
+{
+public void run()
+{
+int n=0;
+Random rand=new Random();
+try
+{
+for(int i=0;i<10;i++)
+{
+n=rand.nextInt(20);
+System.out.println("Generated numbers are:"+n);
+if(n%2==0)
+{
+Thread thread1=new Thread(new EvenNum(n));
+thread1.start();
+}
+else
+{
+Thread thread2=new Thread(new OddNum(n));
+thread2.start();
+}
+Thread.sleep(1000);
+}
+}
+catch(Exception e)
+{
+System.out.println(e.getMessage());
+}
+}
+}
+public class Multithreaded
+{
+public static void main(String arg[])
+{
+RandomNum rand_num=new RandomNum();
+rand_num.start();
+}
+}
