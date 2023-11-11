@@ -1,0 +1,14 @@
+public class stringcount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+          String a="archanasana";
+          int count=0;
+          for(int i=0;i<a.length();i++)
+          {
+            count++;
+          }
+          System.out.println("count of charecter:"+count);
+	}
+
+}
